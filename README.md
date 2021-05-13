@@ -15,9 +15,9 @@ This library supports 301 cowboy emojis and 37 pensive cowboy emojis.
 All emojis are distributed using the source emoji code as the filename. To convert to your own naming conventions, use the [Unicode Emoji List](https://unicode.org/emoji/charts/full-emoji-list.html).
 
 - `assets/cowboy/png` contains 200x200px `.png`s of cowboys.
-- `assets/cowboy/scripts` contains `.svg`s of cowboys.
-- `assets/pensive_cowboy/png` contains 200x200px `.png`s of cowboys.
-- `assets/pensive_cowboy/svg` contains `.svg`s of cowboys.
+- `assets/cowboy/svg` contains `.svg`s of cowboys.
+- `assets/pensive_cowboy/png` contains 200x200px `.png`s of pensive cowboys.
+- `assets/pensive_cowboy/svg` contains `.svg`s of pensive cowboys.
 - `scripts` contains scripts to generate new cowboymojis and pensive cowboymojis programmatically.
 
 ## License
