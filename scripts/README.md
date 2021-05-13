@@ -2,7 +2,7 @@ All scripts assume python3.6+.
 
 ## Cowboyfy.py
 
-Emojis in this library are made one of two ways. A subset are crafted carefully and meticulously by hand, with each pixel considered and loved. For the rest? We generate them programmatically. This done using [cairosvg](https://cairosvg.org/).
+Emojis in this library are made one of two ways. A subset are crafted carefully and meticulously by hand, with each pixel considered and loved. For the rest? We generate them programmatically. This is done using [cairosvg](https://cairosvg.org/).
 
 ### Command Line Arguments:
 - *cowboy_input_dir* Location where the cowboy input dir is.
