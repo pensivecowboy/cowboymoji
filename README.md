@@ -1,5 +1,5 @@
 # Cowboymoji
-They always saw yeehaw but they never ask hawyee... until now.
+They always say "yee haw" but they never ask "haw yee"... until now.
 
 ![sample](sample.png "sample")
 
