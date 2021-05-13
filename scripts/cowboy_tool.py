@@ -8,6 +8,7 @@ import sys
 import os
 import unicodedata
 from shutil import copytree
+from PIL import Image
 
 class CowboyTool:
    def __init__(self):
@@ -102,6 +103,32 @@ class CowboyTool:
          #cairosvg.svg2pdf(url=input_file, write_to=output_file) #TODO why does this just fail without error? Probably my environment... but then why does the command line work?
          os.system(f"cairosvg {input_file} -f png -o {output_file} --output-width {side} --output-height {side}")
 
+
+   def tile_images(self, input_dir, output_name, columns, emoji_side, emoji_spacer):
+      image_list = os.listdir(input_dir)
+      image_list = sorted(image_list)
+      max_width = columns
+      emoji_full_size = emoji_side + emoji_spacer
+      image_width = emoji_full_size * max_width
+      if len(image_list) < max_width:
+         image_width = emoji_full_size * len(image_list)
+
+      image_height = (int(len(image_list) / max_width)) * emoji_full_size
+      if (len(image_list) % max_width) > 0:
+         image_height = image_height + emoji_full_size
+
+      output_image = Image.new('RGBA', (image_width, image_height), (0, 0, 0, 0))
+      cur_x = 0
+      cur_y = 0
+      for image in image_list:
+         emoji = Image.open(f"{input_dir}/{image}", 'r')
+         emoji_resized = emoji.resize((emoji_side, emoji_side))
+         output_image.paste(emoji_resized, (cur_x * emoji_full_size, cur_y * emoji_full_size))
+         cur_x = cur_x + 1
+         if cur_x == max_width:
+            cur_x = 0
+            cur_y = cur_y + 1
+      output_image.save(f"{output_name}.png", format="png")
 
 #def convert_unicode_to_simple_name(input):
 #   input_filename = Path(input).stem
