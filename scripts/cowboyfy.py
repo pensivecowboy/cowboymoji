@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from CowboyTool import CowboyTool
+from cowboy_tool import CowboyTool
 import argparse
 import time
 import os
@@ -28,10 +28,14 @@ def cli_to_args():
 
 def make_boring_emojis_into_cowboys(input_dir, output_dir, png_size, make_them_pensive_too=False):
     cowboy_tool = CowboyTool()
-    # check for cowboy input dirs, so we can input some cowboys into some directories.
+    # set up some defaults, and override some of them if we're making a pensive set.
     output_name = "cowboy"
+    preview_image_name = "cowboy_full_set"
+    preview_columns = 10
     if make_them_pensive_too:
        output_name = "pensive_cowboy"
+       preview_image_name = "pensive_cowboy_full_set"
+       preview_columns = 8
 
     output_path = f"{output_dir}/{output_name}"
     file_sizes = os.listdir(input_dir)
@@ -52,6 +56,14 @@ def make_boring_emojis_into_cowboys(input_dir, output_dir, png_size, make_them_p
                                              f"{output_path}/svg")
     # convert all the SVGs to pngs!
     cowboy_tool.convert_svg_to_png(f"{output_path}/svg",  f"{output_path}/png", png_size)
+    # create a preview image
+    preview_emoji_size = 100
+    preview_emoji_spacer = 10
+    cowboy_tool.tile_images(f"{output_path}/png",
+                            preview_image_name,
+                            preview_columns,
+                            preview_emoji_size,
+                            preview_emoji_spacer)
 
 
 def main():
