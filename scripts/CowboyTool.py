@@ -47,7 +47,7 @@ class CowboyTool:
    def create_pensive_cowboy_emoji(self, input, output_dir, offset):
       """
       Takes an emoji as input and applies a cowboy hat, then puts it in a city
-      and tells its some bad news.
+      and tells it some bad news.
       """
       print(f"pensiving and cowboyfy-ing {input}.... haw yee.")
       # create output path, if it doesn't exist
