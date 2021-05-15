@@ -40,17 +40,20 @@ def make_boring_emojis_into_cowboys(input_dir, output_dir, png_size, make_them_p
     output_path = f"{output_dir}/{output_name}"
     file_sizes = os.listdir(input_dir)
     for file_size in file_sizes:
-       files_to_convert = os.listdir(f"{input_dir}/{file_size}")
-       for file in files_to_convert:
-          input_file = f"{input_dir}/{file_size}/{file}"
-          if make_them_pensive_too:
-              cowboy_tool.create_pensive_cowboy_emoji(input_file,
+       if file_size != ".DS_Store":
+           files_to_convert = os.listdir(f"{input_dir}/{file_size}")
+           for file in files_to_convert:
+              # catch an edge case on macOS
+              if file != ".DS_Store":
+                  input_file = f"{input_dir}/{file_size}/{file}"
+                  if make_them_pensive_too:
+                      cowboy_tool.create_pensive_cowboy_emoji(input_file,
+                                                              f"{output_path}/svg",
+                                                              int(file_size))
+                  else:
+                      cowboy_tool.create_cowboy_emoji(input_file,
                                                       f"{output_path}/svg",
                                                       int(file_size))
-          else:
-              cowboy_tool.create_cowboy_emoji(input_file,
-                                              f"{output_path}/svg",
-                                              int(file_size))
     # copy files that were built in illustrator into the output directory
     cowboy_tool.copy_from_prebuilt_to_output(f"./prebuilt/{output_name}/svg",
                                              f"{output_path}/svg")

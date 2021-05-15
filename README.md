@@ -5,7 +5,7 @@ They always say "yee haw" but they never ask "haw yee"... until now.
 
 This is a simple library that provides standard Unicode [emoji](https://en.wikipedia.org/wiki/Emoji) support for cowboy and pensive cowboy variants of popular emojis. It is built off of the [twemoji emoji set](https://github.com/twitter/twemoji).
 
-This library supports 300 cowboy emojis and 36 pensive cowboy emojis.
+This library supports 300 cowboy emojis and 37 pensive cowboy emojis.
 
 - [Full set of cowboys](scripts/cowboy_full_set.png)
 - [Full set of pensive cowboys](scripts/pensive_cowboy_full_set.png)

@@ -20,3 +20,7 @@ This is a drop dead-as-a-cow simple interface for taking a directory of images a
 - *columns* The number of columns per row for your tiled image.
 - *emoji_size* The width and height of the emoji in the tile in pixels. Emojis must be square and will be resized to this given size from their original size.
 - *spacer* The amount of space between each emoji in pixels.
+
+
+### rename_cowboys.py
+What if I don't want to use the emoji code as the emoji names, how do I convert to plain english? I wish I had an easy answer for you, partner. We've added the script we use over here 'round the ranch to convert the emoji names to names loosely based off of discord emoji names. However, there's rattlesnakes in the details. How you delimit spaces (icecream vs ice-cream vs ice_cream)? How do you denote skin shades for emojis that come in all skin colors? How do you tell apart a camel with one hump and a camel with two? Because there is no universal answer to problems like these, we can't promise this script meets your needs or will be maintained going forward.
