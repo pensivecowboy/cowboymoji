@@ -20,6 +20,17 @@ All emojis are distributed using the source emoji code as the filename. To conve
 - `assets/pensive_cowboy/svg` contains `.svg`s of pensive cowboys.
 - `scripts` contains scripts to generate new cowboymojis and pensive cowboymojis programmatically.
 
+## Discord Emojis
+
+![faces_1_cowboymoji_set](scripts/faces_1_cowboymoji.png "faces_1_cowboymoji_set")
+
+If you have a Discord Nitro account and want to use some of the emojis right away, feel free to join any of the relevant discords:
+
+- [faces_1_cowboymoji](https://discord.gg/VaF49gaQ4v): 1/2 of the standard emoji face set.
+- [faces_2_cowboymoji](https://discord.gg/dpEm6aBNjJ): the remaining standard emoji face set and cat faces.
+- [extra_cowboys_cowboymoji](https://discord.gg/rwdt84je8G): a random sampling of miscellaneous cowboys.
+- [pensive_cowboys_cowboymoji](https://discord.gg/uakUM7XzTd): the entire set of `pensive_cowboy` emojis.
+
 ## License
 
 Copyright 2021
