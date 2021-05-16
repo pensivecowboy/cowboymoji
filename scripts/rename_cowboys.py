@@ -82,7 +82,7 @@ def find_short_name(input):
         '1f425' : 'hatched_chick',
         '1f427' : 'penguin',
         '1f428' : 'koala',
-        '1f42a' : 'camel_two_hump',
+        '1f42a' : 'camel_two_humps',
         '1f42b' : 'camel_one_hump',
         '1f42c' : 'dolphin',
         '1f42d' : 'mouse_face',
