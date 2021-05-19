@@ -15,7 +15,7 @@ class CowboyTool:
       # twemoji emojis are 36x36 by default
       self.standard_size = 36
       # load the glorious hat emoji
-      self.all_powerful_hat = sg.fromfile('hat.svg')
+      self.all_powerful_hat = sg.fromfile('res/hat.svg')
       self.all_powerful_root = self.all_powerful_hat.getroot()
 
 
@@ -64,7 +64,7 @@ class CowboyTool:
 
 
       # load the all knowing pensive face svg.
-      all_knowing_face = sg.fromfile('pensive.svg')
+      all_knowing_face = sg.fromfile('res/pensive.svg')
       # move pensive face to same spot as input svg
       all_knowing_root = all_knowing_face.getroot()
       # the pensive face is 20x26, so account for that and move it, move it.

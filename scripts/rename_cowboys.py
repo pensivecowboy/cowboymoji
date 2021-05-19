@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import sys
 import shutil
@@ -307,12 +309,13 @@ def find_short_name(input):
         '2622' : 'radioactive',
         '2623' : 'biohazard',
         '2639' : 'frowning_face',
-        '263a' : 'smiling_face',
+        '263a' : 'relaxed',
         '267e' : 'infinity',
         '26a0' : 'warning',
         '26bd' : 'soccer_ball',
         '26be' : 'baseball',
-        '26d4' : 'no_entry'
+        '26d4' : 'no_entry',
+        '1f46f' : 'people_partying'
     }
     if input in dict:
         return dict[input]

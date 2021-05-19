@@ -1,14 +1,14 @@
 # Cowboymoji
 They always say "yee haw" but they never ask "haw yee"... until now.
 
-![sample](sample.png "sample")
+![sample](examples/sample.png "sample")
 
 This is a simple library that provides Unicode [emoji](https://en.wikipedia.org/wiki/Emoji) support for `cowboy` and `pensive_cowboy` variants of popular emojis. It is built off of the [twemoji emoji set](https://github.com/twitter/twemoji).
 
-This library supports 300 cowboy emojis and 37 pensive cowboy emojis.
+This library supports 301 cowboy emojis and 37 pensive cowboy emojis.
 
-- [Full set of cowboys](scripts/cowboy_full_set.png)
-- [Full set of pensive cowboys](scripts/pensive_cowboy_full_set.png)
+- [Full set of cowboys](examples/cowboy_full_set.png)
+- [Full set of pensive cowboys](examples/pensive_cowboy_full_set.png)
 
 ## Structure
 
@@ -29,7 +29,7 @@ If you have a Discord Nitro account and want to use some of the emojis right awa
 - [extra_cowboys_cowboymoji](https://discord.gg/rwdt84je8G): a random sampling of miscellaneous cowboys.
 - [pensive_cowboys_cowboymoji](https://discord.gg/uakUM7XzTd): the entire set of `pensive_cowboy` emojis.
 
-![faces_1_cowboymoji_set](scripts/faces_1_cowboymoji.png "faces_1_cowboymoji_set")
+![faces_1_cowboymoji_set](examples/faces_1_cowboymoji.png "faces_1_cowboymoji_set")
 
 ## License
 
