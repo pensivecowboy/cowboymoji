@@ -104,7 +104,7 @@ class CowboyTool:
          os.system(f"cairosvg {input_file} -f png -o {output_file} --output-width {side} --output-height {side}")
 
 
-   def tile_images(self, input_dir, output_name, columns, emoji_side, emoji_spacer):
+   def tile_images(self, input_dir, output_dir, output_name, columns, emoji_side, emoji_spacer):
       image_list = os.listdir(input_dir)
       image_list = sorted(image_list)
       max_width = columns
@@ -128,14 +128,4 @@ class CowboyTool:
          if cur_x == max_width:
             cur_x = 0
             cur_y = cur_y + 1
-      output_image.save(f"{output_name}.png", format="png")
-
-#def convert_unicode_to_simple_name(input):
-#   input_filename = Path(input).stem
-#   input_strings = input_filename.split("-")
-#   cldr = ""
-#   print(len(input_strings))
-#   for substring in input_strings:
-#      #print(substring)
-#      cldr = unicodedata.name(chr(int(substring, 16)))
-#   print(cldr)
+      output_image.save(f"{output_dir}/{output_name}.png", format="png")

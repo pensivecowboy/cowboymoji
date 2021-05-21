@@ -2,5 +2,6 @@ scripts/input/
 scripts/pensive_input/
 scripts/output/
 scripts/__pycache__/
+scripts/renamed/
 renamed_assets/
 scripts/script_input/

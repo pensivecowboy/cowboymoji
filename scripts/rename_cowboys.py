@@ -3,7 +3,23 @@
 import os
 import sys
 import shutil
+import time
 from pathlib import Path
+import argparse
+
+
+def cli_to_args():
+    """
+    converts the command line interface to a series of args
+    """
+    cli = argparse.ArgumentParser(description="")
+    cli.add_argument('-input_dir',
+                     type=str, required=True,
+                     help='The input directory that contains pngs and svgs of cowboys with Unicode names')
+    cli.add_argument('-output_dir',
+                     type=str, required=True,
+                     help='The output diectory where we will put pngs and svgs of cowboys with plain english names. Yee haw.')
+    return cli.parse_args()
 
 
 def find_short_name(input):
@@ -324,33 +340,41 @@ def find_short_name(input):
         exit()
 
 
-def rename_directory(directory_name, name_to_append):
-    assets = os.listdir(f"../renamed_assets/{directory_name}/svg")
+def rename_directory(output_dir, name_to_append):
+    path_to_svg = f"{output_dir}/{name_to_append}/svg"
+    path_to_png = f"{output_dir}/{name_to_append}/png"
+    assets = os.listdir(path_to_svg)
     for asset in assets:
         # get the file name with no extension
         file_name = os.path.splitext(asset)[0]
         final_file_name = f"{find_short_name(file_name)}_{name_to_append}"
         # rename the svg
-        svg_path = f"../renamed_assets/{directory_name}/svg/{file_name}.svg"
-        svg_path_modified = f"../renamed_assets/{directory_name}/svg/{final_file_name}.svg"
+        svg_path = f"{path_to_svg}/{file_name}.svg"
+        svg_path_modified = f"{path_to_svg}/{final_file_name}.svg"
         os.rename(svg_path, svg_path_modified)
         # rename the png
-        png_path = f"../renamed_assets/{directory_name}/png/{file_name}.png"
-        png_path_modified = f"../renamed_assets/{directory_name}/png/{final_file_name}.png"
+        png_path = f"{path_to_png}/{file_name}.png"
+        png_path_modified = f"{path_to_png}/{final_file_name}.png"
         os.rename(png_path, png_path_modified)
 
+
 def main():
+    args = cli_to_args()
+    overall_run_time = time.time()
+
     # check for pre-existing renamed_assets dir. remove if it does exist,
     # so we are working with a clean slate.
-    dir_path = Path('../renamed_assets')
+    dir_path = Path(f"{args.output_dir}")
     if dir_path.exists():
         shutil.rmtree(dir_path)
     # copy the assets directory. Note, this fails if the renamed_assets already exists
-    shutil.copytree("../assets/", dir_path)
+    shutil.copytree(f"{args.input_dir}", f"{args.output_dir}")
     # rename all the cowboys!
-    rename_directory("cowboy", "cowboy")
+    rename_directory(args.output_dir, "cowboy")
     # rename all the pensive_cowboys
-    rename_directory("pensive_cowboy", "pensive_cowboy")
+    rename_directory(args.output_dir, "pensive_cowboy")
+    print(f"Runtime:{time.time() - overall_run_time}s. Did you beat your high score?")
+
 
 
 if __name__ == "__main__":
