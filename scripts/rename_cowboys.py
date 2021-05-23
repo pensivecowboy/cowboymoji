@@ -331,7 +331,8 @@ def find_short_name(input):
         '26bd' : 'soccer_ball',
         '26be' : 'baseball',
         '26d4' : 'no_entry',
-        '1f46f' : 'people_partying'
+        '1f46f' : 'people_partying',
+        '1f41d' : 'bee'
     }
     if input in dict:
         return dict[input]
