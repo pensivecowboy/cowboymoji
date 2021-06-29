@@ -347,17 +347,18 @@ def rename_directory(output_dir, name_to_append):
     path_to_png = f"{output_dir}/{name_to_append}/png"
     assets = os.listdir(path_to_svg)
     for asset in assets:
-        # get the file name with no extension
-        file_name = os.path.splitext(asset)[0]
-        final_file_name = f"{find_short_name(file_name)}_{name_to_append}"
-        # rename the svg
-        svg_path = f"{path_to_svg}/{file_name}.svg"
-        svg_path_modified = f"{path_to_svg}/{final_file_name}.svg"
-        os.rename(svg_path, svg_path_modified)
-        # rename the png
-        png_path = f"{path_to_png}/{file_name}.png"
-        png_path_modified = f"{path_to_png}/{final_file_name}.png"
-        os.rename(png_path, png_path_modified)
+        if asset != ".DS_Store":
+           # get the file name with no extension
+           file_name = os.path.splitext(asset)[0]
+           final_file_name = f"{find_short_name(file_name)}_{name_to_append}"
+           # rename the svg
+           svg_path = f"{path_to_svg}/{file_name}.svg"
+           svg_path_modified = f"{path_to_svg}/{final_file_name}.svg"
+           os.rename(svg_path, svg_path_modified)
+           # rename the png
+           png_path = f"{path_to_png}/{file_name}.png"
+           png_path_modified = f"{path_to_png}/{final_file_name}.png"
+           os.rename(png_path, png_path_modified)
 
 
 def main():
