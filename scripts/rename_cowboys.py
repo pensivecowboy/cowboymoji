@@ -333,7 +333,15 @@ def find_short_name(input):
         '26d4' : 'no_entry',
         '1f46f' : 'people_partying',
         '1f41d' : 'bee',
-        '1f3c0' : 'basketball'
+        '1f3c0' : 'basketball',
+        '1f44d' : 'thumbs_up',
+        '1f44e' : 'thumbs_down',
+        '1f332' : 'evergreen_tree',
+        '1f333' : 'deciduous_tree',
+        '1f96c' : 'leafy_green',
+        '1f64f' : 'pray',
+        '1f44f' : 'clap',
+        '1fab4' : 'potted_plant'
     }
     if input in dict:
         return dict[input]
