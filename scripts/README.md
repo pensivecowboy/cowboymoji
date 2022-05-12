@@ -8,6 +8,7 @@ Emojis in this library are made one of two ways. A subset are crafted carefully 
 - *cowboy_input_dir* Location where the cowboy input dir is.
 - *pensive_input_dir* Location where the pensive cowboy input dir is.
 - *output_dir* Top level output dir.
+  - terminating directory must have `cowboy` and `pensive_cowboy` directories with emojis to edit y'all
 - *png_size* Side of a png square for the output.
 
 ## tile_images.py

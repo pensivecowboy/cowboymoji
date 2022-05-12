@@ -5,3 +5,5 @@ scripts/__pycache__/
 scripts/renamed/
 renamed_assets/
 scripts/script_input/
+scripts/out/
+**.venv**
